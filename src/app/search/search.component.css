@@ -1,0 +1,11 @@
+.global-finder {
+    display:flex;
+    justify-content: center;
+}
+
+#finder
+{
+    display:flex;
+    justify-content: center;
+    
+}
