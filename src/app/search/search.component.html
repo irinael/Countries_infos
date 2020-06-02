@@ -1,4 +1,4 @@
-<div class="gtco-loader"></div>
+<!-- <div class="gtco-loader"></div> -->
 
 <div id="page">
 
@@ -16,10 +16,13 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-		style="background-image: url(../assets/images/img_6.jpg); max-height: 20em; ">
-		<div class="overlay"></div>
-		<div class="gtco-container">
+	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="height:400px;">
+		<!-- style="background-image: url(../assets/images/img_6.jpg); max-height: 20em; "> -->
+		<video autoplay muted loop id="myVideo" muted="muted">
+			<source src="assets/images/sea.mp4" type="video/mp4">
+		</video> 
+		<div class="overlay" style="background: rgba(0, 0, 0, 0.2)"></div>
+		<div class="gtco-container" >
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					<div class="row row-mt-5em">
@@ -32,42 +35,61 @@
 
 			<div class="row" id="finder">
 				<div>
-					<input class="form-control" [(ngModel)]="nameInput" placeholder="France, Italy, Egypt...">
+					<input (keyup)="getCountryByName()" style="color:white;" class="form-control" [(ngModel)]="nameInput" placeholder="France, Colombia, Egypt..."
+						style="font-size:1em; color:white;border: 2px solid rgba(0, 0, 0, 0.1);height:50px;font-weight: bold;">
 				</div>
 				<div>
-					<p class="col-md-6"><span (click)="getCountryByName()" class="btn btn-primary">Pick a country
+					<p class="col-md-6"><span (click)="getCountryByName();" class="btn btn-primary"
+							style="font-size:1em;height:50px;padding-top:13px;font-weight: bold;">Pick a country
 							!</span></p>
 				</div>
 			</div>
 
 		</div>
-
+		<div class="gtco-container" style="position:absolute;
+		bottom:15px;font-size:0.7em; ">
+			<button id="myBtn" (click)="videoOnOff()"></button></div>
 	</header>
 
-	<div class="gtco-section" style="padding:3em;">
+	<div class="gtco-section" style="padding:1em;">
 		<div class="gtco-container">
-			<div *ngIf="resultList.length==0" class="row">
+			<div *ngIf="resultList.length==0 && error == null" class="row" style="padding-top:0px;">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Learn about it !</h2>
+					<div class="arrow" (click)="scrollToCountries()">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 				</div>
 			</div>
-				
-
-				<div *ngIf="resultList != null" class="row">
-					<div *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
-						<a routerLink="details/{{country.name}}" class="fh5co-card-item image-popup">
-							<figure>
-								<div class="overlay"></div>
-								<img src="{{country.flag}}" alt="flag" class="img-responsive">
-							</figure>
-							<div class="fh5co-text">
-								<h2>{{country.name}}, {{country.region}}</h2>
-								<p>Capital : {{country.capital}}</p>
-								<button (click)="saveCountry(country)" class="btn btn-primary" routerLink="details/{{country.name}}">Learn more</button>
-							</div>
-						</a>
-					</div>
+		
+<!-- <div class="row" id="regions">
+	
+	<app-region-preview></app-region-preview>
+	 <div routerLink="region/Africa">Africa</div>
+	<div routerLink="region/Americas">Americas</div>
+	<div routerLink="region/Asia">Asia</div>
+	<div routerLink="region/Europe">Europe</div>
+	<div routerLink="region/Oceania">Oceania</div> 
+</div> -->
+<div *ngIf="error != null"><app-error-country message='{{error}}'></app-error-country></div>
+			<div *ngIf="resultList != null" id="countries" class="row">
+				<div  *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
+					<a class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"></div>
+							<img src="{{country.flag}}" alt="flag" class="img-responsive">
+						</figure>
+						<div class="fh5co-text">
+							<h2>{{country.name}}, {{country.region}}</h2>
+							<p>Capital : {{country.capital}}</p>
+							<button class="btn btn-primary"
+								(click)="setSelectedCountry(country);openDialog()">Learn more</button>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>

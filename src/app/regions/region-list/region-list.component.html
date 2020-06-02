@@ -1,0 +1,8 @@
+<p>
+  Which of the {{nbCountries}} countries in {{region}} interests you ?
+</p>
+<p routerLink="../../">retour</p>
+
+<div *ngFor="let country of countries">
+  <p routerLink="../../details/{{country.name}}"> {{country.name}} </p>
+</div>

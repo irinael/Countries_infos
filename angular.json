@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/styles.scss"
             ],
@@ -31,22 +32,63 @@
                 "src/styles"
               ]
             },
-            "scripts": [ 
-              {"input": "src/assets/js/jquery.min.js","bundleName": "external-module8"},
-              { "input": "src/assets/js/jquery.easing.1.3.js","bundleName": "external-module5"},
-               { "input": "src/assets/js/jquery.countTo.js","bundleName": "external-module18"},
-               {"input": "src/assets/js/jquery.easypiechart.min.js","bundleName": "external-module6"},
-               {"input": "src/assets/js/jquery.magnific-popup.min.js","bundleName": "external-module7"},
-               {"input": "src/assets/js/jquery.stellar.min.js","bundleName": "external-module9"},
-               {"input": "src/assets/js/jquery.waypoints.min.js","bundleName": "external-module10"},
-
-               {"input": "src/assets/js/bootstrap.min.js","bundleName": "external-module16"},
-               {"input": "src/assets/js/bootstrap-datepicker.min.js", "bundleName": "external-module2"},
-               {"input": "src/assets/js/magnific-popup-options.js","bundleName": "external-module11"},
-               {"input": "src/assets/js/owl.carousel.min.js","bundleName": "external-module14"},
-               {"input": "src/assets/js/modernizr-2.6.2.min.js","bundleName": "external-module13"},
-               {"input": "src/assets/js/respond.min.js","bundleName": "external-module15"},
-               {"input": "src/assets/js/main.js","bundleName": "external-module12"}
+            "scripts": [
+              {
+                "input": "src/assets/js/jquery.min.js",
+                "bundleName": "external-module8"
+              },
+              {
+                "input": "src/assets/js/jquery.easing.1.3.js",
+                "bundleName": "external-module5"
+              },
+              {
+                "input": "src/assets/js/jquery.countTo.js",
+                "bundleName": "external-module18"
+              },
+              {
+                "input": "src/assets/js/jquery.easypiechart.min.js",
+                "bundleName": "external-module6"
+              },
+              {
+                "input": "src/assets/js/jquery.magnific-popup.min.js",
+                "bundleName": "external-module7"
+              },
+              {
+                "input": "src/assets/js/jquery.stellar.min.js",
+                "bundleName": "external-module9"
+              },
+              {
+                "input": "src/assets/js/jquery.waypoints.min.js",
+                "bundleName": "external-module10"
+              },
+              {
+                "input": "src/assets/js/bootstrap.min.js",
+                "bundleName": "external-module16"
+              },
+              {
+                "input": "src/assets/js/bootstrap-datepicker.min.js",
+                "bundleName": "external-module2"
+              },
+              {
+                "input": "src/assets/js/magnific-popup-options.js",
+                "bundleName": "external-module11"
+              },
+              {
+                "input": "src/assets/js/owl.carousel.min.js",
+                "bundleName": "external-module14"
+              },
+              {
+                "input": "src/assets/js/modernizr-2.6.2.min.js",
+                "bundleName": "external-module13"
+              },
+              {
+                "input": "src/assets/js/respond.min.js",
+                "bundleName": "external-module15"
+              },
+              {
+                "input": "src/assets/js/main.js",
+                "bundleName": "external-module12"
+              }
             ],
             "es5BrowserSupport": true
           },
@@ -102,14 +144,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              
-            ],
+            "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              "src/favicon.png",
               "src/assets"
             ]
           }
