@@ -27,8 +27,8 @@ export class CountriesServicesService {
   getCountriesByRegion(region: string): Observable<Array<Country>> {
     return this.http.get<Array<Country>>(this.baseUrl + 'region/' + region);
   }
-  getCountryByAlphaCode(alpha2or3: string): Observable<Array<Country>> {
-    return this.http.get<Array<Country>>(this.baseUrl + 'alpha/' + alpha2or3);
+  getCountryByAlphaCode(alpha2or3: string): Observable<Country> {
+    return this.http.get<Country>(this.baseUrl + 'alpha/' + alpha2or3);
   }
 
 }
