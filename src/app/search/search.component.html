@@ -20,9 +20,9 @@
 		<!-- style="background-image: url(../assets/images/img_6.jpg); max-height: 20em; "> -->
 		<video autoplay muted loop id="myVideo" muted="muted">
 			<source src="assets/images/sea.mp4" type="video/mp4">
-		</video> 
+		</video>
 		<div class="overlay" style="background: rgba(0, 0, 0, 0.2)"></div>
-		<div class="gtco-container" >
+		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					<div class="row row-mt-5em">
@@ -33,16 +33,16 @@
 				</div>
 			</div>
 
-			<div class="row" id="finder">
-				<div>
-					<input style="color:white;" class="form-control" [(ngModel)]="nameInput" placeholder="France, Colombia, Egypt..."
-						style="font-size:1em; color:white;border: 2px solid rgba(0, 0, 0, 0.1);height:50px;font-weight: bold;">
+			<div class="row">
+				<form #searchForm="ngForm" id="finder">
+				<div class="form-group">
+					<input name="search" class="form-control" [(ngModel)]="nameInput" placeholder="France, Colombia, Egypt...">
 				</div>
-				<div>
-					<p class="col-md-6"><span (click)="getCountryByName();" class="btn btn-primary"
-							style="font-size:1em;height:50px;padding-top:13px;font-weight: bold;">Pick a country
-							!</span></p>
-				</div>
+				
+					<button type="submit" (click)="getCountryByName();searchForm.reset()" class="btn btn-primary">Pick a country
+							!</button>
+				
+			</form>
 			</div>
 
 		</div>
@@ -63,8 +63,8 @@
 					</div>
 				</div>
 			</div>
-		
-<!-- <div class="row" id="regions">
+
+			<!-- <div class="row" id="regions">
 	
 	<app-region-preview></app-region-preview>
 	 <div routerLink="region/Africa">Africa</div>
@@ -73,9 +73,11 @@
 	<div routerLink="region/Europe">Europe</div>
 	<div routerLink="region/Oceania">Oceania</div> 
 </div> -->
-<div *ngIf="error != null"><app-error-country message='{{error}}'></app-error-country></div>
+			<div *ngIf="error != null">
+				<app-error-country message='{{error}}'></app-error-country>
+			</div>
 			<div *ngIf="resultList != null" id="countries" class="row">
-				<div  *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
+				<div *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
 					<a class="fh5co-card-item image-popup">
 						<figure>
 							<div class="overlay"></div>
@@ -84,8 +86,8 @@
 						<div class="fh5co-text">
 							<h2>{{country.name}}, {{country.region}}</h2>
 							<p>Capital : {{country.capital}}</p>
-							<button class="btn btn-primary"
-								(click)="setSelectedCountry(country);openDialog()">Learn more</button>
+							<button class="btn btn-primary" (click)="setSelectedCountry(country);openDialog()">Learn
+								more</button>
 						</div>
 					</a>
 				</div>
