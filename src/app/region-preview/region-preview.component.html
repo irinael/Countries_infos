@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-4 col-sm-6">
+<!-- <div class="col-lg-4 col-md-4 col-sm-6">
   <a routerLink="" class="fh5co-card-item image-popup"> </a>
   <figure>
     <div class="overlay"></div>
@@ -8,4 +8,21 @@
     <h2>Africa</h2>
     <p>34 countries</p>
   </div>
+</div> -->
+
+<div id="carousel">
+  <figure id="spinner">
+    <img routerLink="region/Africa" src="../../assets/images/africa.jpg" alt="africa">
+    
+    <img routerLink="region/Asia" src="../../assets/images/asia2.jpg" alt="asia">
+    
+    <img routerLink="region/Americas" src="../../assets/images/americas.jpg" alt="americas">
+    
+    <img routerLink="region/Europe" src="../../assets/images/europe.jpg" alt="europe">
+  
+    <img routerLink="region/Oceania" src="../../assets/images/oceania.jpg" alt="oceania">
+   
+  </figure>
 </div>
+<span style="float:left;" class="ss-icon" (click)="galleryspin('-')">&lt;</span>
+<span style="float:right;" class="ss-icon" (click)="galleryspin('')">&gt;</span>

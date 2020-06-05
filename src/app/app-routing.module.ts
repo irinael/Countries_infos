@@ -5,12 +5,10 @@ import { DetailsCountryComponent } from './details-country/details-country.compo
 import { RegionListComponent } from './regions/region-list/region-list.component';
 
 const routes: Routes = [
-  {path: '',
-  component: SearchComponent},
+  {path: '', component: SearchComponent},
   // {path: 'details/:name',
   // component: DetailsCountryComponent},
-  {path: 'region/:region',
-  component: RegionListComponent}
+  {path: 'region/:region', component: RegionListComponent}
 ];
 
 @NgModule({
