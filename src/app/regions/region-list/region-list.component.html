@@ -7,7 +7,7 @@
   <p> {{country.name}} </p>
 </div> -->
 
- <div style="background-color:black;" id="page">
+<div style="background-color:black;" id="page">
   <nav class="gtco-nav" role="navigation">
     <div class="gtco-container">
 
@@ -19,8 +19,9 @@
     </div>
   </nav>
 
-  <div id="gtco-header" class="gtco-cover-reg" role="banner"
-    style="background-image: url(../../assets/images/africa.jpg)">
+
+
+  <div id="gtco-header" class="gtco-cover-reg" role="banner" [style.background-image]="regionImg">
     <div class="overlay" style="height:1300px"></div>
     <div class="gtco-container">
       <div class="row">
@@ -28,21 +29,22 @@
 
 
           <div class="row">
-            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
-              <h1>Which of the {{nbCountries}} countries in {{region}} interests you ?</h1>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-7 mt-text">
+           
+            <h1>Which of the {{nbCountries}} countries in {{region}} interests you ?</h1>
+          </div>
+          <div class="col-md-4">
               <div class="ContactList" *ngFor="let country of countriesByLetter">
                 <section class="Contact">
                   <img class="Contact-avatar" src="{{country.flag}}" />
-                  <h5 class="Contact-name">{{country.name}}</h5>
+                  <h5 class="Contact-name" (click)="setSelectedCountry(country);openDialog()">{{country.name}}</h5>
                 </section>
               </div>
             </div>
             <div style="margin-top:20%" class="col-md-4">
               <h4 style="font-weight: bold" class="Contact-name">{{error}}</h4>
             </div>
-            <div class="animate-box">
+            <div>
               <div class="alpha">
                 <span (click)="getCountriesByLetter('A')">A</span>
                 <span (click)="getCountriesByLetter('B')">B</span>
@@ -80,4 +82,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>

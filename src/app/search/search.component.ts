@@ -24,10 +24,30 @@ export class SearchComponent implements OnInit {
 
   @Input() nameInput: string;
   resultList: Country[] = [];
-  name: '';
+  name = '';
   selectedCountry: Country;
-  error: any ;
+  error: any;
   video: any;
+  year: any;
+
+  getCountriesStyle() {
+    if (this.resultList.length <= 3) {
+      return { 'display': 'flex', 'justify-content': 'center' };
+    }
+  }
+  getYear() {
+    this.year = new Date().getFullYear();
+  }
+
+  getAll(): void {
+    this.service.getAll().subscribe(
+      data => {
+        data.map(country => {
+          this.resultList.push(country);
+        });
+      }
+    );
+  }
 
   getCountryByName(): void {
     this.error = null;
@@ -35,7 +55,7 @@ export class SearchComponent implements OnInit {
       this.resultList.pop();
     }
 
-    if (this.nameInput === null || this.nameInput === '') {
+    if (this.nameInput === null || this.nameInput === '' || this.nameInput === undefined) {
       this.service.getAll().subscribe(
         data => {
           data.forEach(country => {
@@ -67,7 +87,7 @@ export class SearchComponent implements OnInit {
   }
 
   scrollToCountries() {
-    document.getElementById('regions').scrollIntoView();
+    document.getElementById('countries').scrollIntoView();
   }
 
   setSelectedCountry(country: Country) {
@@ -89,6 +109,8 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.video = document.getElementById('myVideo') as HTMLVideoElement;
     this.videoOnOff();
+    this.getYear();
+    this.getAll();
 
   }
 
