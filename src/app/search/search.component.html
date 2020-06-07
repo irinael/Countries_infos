@@ -16,13 +16,13 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="height:400px;">
-		<!-- style="background-image: url(../assets/images/img_6.jpg); max-height: 20em; "> -->
+	<header id="gtco-header" class="gtco-cover-search"
+		style="background-image: url(assets/images/travel.jpg); ">
 		<video autoplay muted loop id="myVideo" muted="muted">
 			<source src="assets/images/sea.mp4" type="video/mp4">
 		</video>
 		<div class="overlay" style="background: rgba(0, 0, 0, 0.2)"></div>
-		<div class="gtco-container">
+		<div style="display:flex;flex-direction:column;justify-content:space-around" class="gtco-container">
 			<div class="row" id="curious">
 				<div class="col-md-12 col-md-offset-0 text-center">
 					<div class="row row-mt-5em">
@@ -46,6 +46,16 @@
 
 				</form>
 			</div>
+			<div class="row" style="padding-top:0px;">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h1>Learn about it !</h1>
+					<div class="arrow">
+						<span></span>
+						<span></span>
+						
+					</div>
+				</div>
+			</div>
 
 		</div>
 		<div class="gtco-container" style="position:absolute;
@@ -55,16 +65,6 @@
 
 	<div class="gtco-section" style="padding:1em;">
 		<div class="gtco-container">
-			<div class="row" style="padding-top:0px;">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2>Learn about it !</h2>
-					<div class="arrow">
-						<span></span>
-						<span></span>
-						
-					</div>
-				</div>
-			</div>
 
 			<div class="row" id="regions">
 				<app-region-preview></app-region-preview>

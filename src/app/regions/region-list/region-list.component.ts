@@ -30,11 +30,11 @@ export class RegionListComponent implements OnInit {
   selectedCountry: Country;
 
   getRegionsMap(): void {
-    this.regions.set('Africa', 'url(../../assets/images/africa-raw.jpg)');
-    this.regions.set('Asia', 'url(../../assets/images/asia-raw.jpg)');
-    this.regions.set('Americas', 'url(../../assets/images/americas-raw.jpg)');
-    this.regions.set('Europe', 'url(../../assets/images/europe-raw.jpg)');
-    this.regions.set('Oceania', 'url(../../assets/images/oceania-raw.jpg)');
+    this.regions.set('Africa', 'url(assets/images/africa-raw.jpg)');
+    this.regions.set('Asia', 'url(assets/images/asia-raw.jpg)');
+    this.regions.set('Americas', 'url(assets/images/americas-raw.jpg)');
+    this.regions.set('Europe', 'url(assets/images/europe-raw.jpg)');
+    this.regions.set('Oceania', 'url(assets/images/oceania-raw.jpg)');
     this.regionImg = this.sanitazer.bypassSecurityTrustStyle(this.regions.get(this.region));
   }
   setSelectedCountry(country: Country) {
