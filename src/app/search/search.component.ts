@@ -19,13 +19,12 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private serviceError: ErrorCountryService,
-    private service: CountriesServicesService,
-    public dialog: MatDialog) { }
+    private service: CountriesServicesService) { }
 
   @Input() nameInput: string;
   resultList: Country[] = [];
   name = '';
-  selectedCountry: Country;
+  // selectedCountry: Country;
   error: any;
   video: any;
   year: any;
@@ -90,22 +89,11 @@ export class SearchComponent implements OnInit {
     document.getElementById('countries').scrollIntoView();
   }
 
-  setSelectedCountry(country: Country) {
-    this.selectedCountry = country;
-  }
+  // setSelectedCountry(country: Country) {
+  //   this.selectedCountry = country;
+  // }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DetailsCountryComponent, {
-      data: {
-        country: this.selectedCountry,
-      }
-    });
 
-    dialogRef.afterClosed().subscribe
-      (res => {
-        console.log('dialog res: ${res}');
-      });
-  }
   ngOnInit() {
     this.video = document.getElementById('myVideo') as HTMLVideoElement;
     this.videoOnOff();

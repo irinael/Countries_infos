@@ -14,6 +14,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpErrorInterceptor } from './errors-handling/http-error-interceptor';
 import { ErrorCountryComponent } from './error-country/error-country.component';
+import { CountryCardComponent } from './country-card/country-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ErrorCountryComponent } from './error-country/error-country.component';
     RegionPreviewComponent,
     ErrorCountryComponent,
     RegionPreviewComponent,
+    CountryCardComponent,
   ],
   imports: [
     BrowserModule,

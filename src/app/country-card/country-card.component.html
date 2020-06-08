@@ -1,0 +1,12 @@
+<a style="max-height:350px" class="fh5co-card-item image-popup" style="border-radius: 4px;">
+  <figure style="max-height:150px;">
+    <div class="overlay"></div>
+    <img src="{{country.flag}}" alt="flag" class="img-responsive">
+  </figure>
+  <div style="min-height:200px" class="fh5co-text">
+    <h2>{{country.name}}, {{country.region}}</h2>
+    <p>Capital : {{country.capital}}</p>
+    <button class="btn btn-primary" (click)="openDialog()">Learn
+      more</button>
+  </div>
+</a>
