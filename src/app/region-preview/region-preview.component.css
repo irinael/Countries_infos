@@ -1,62 +1,4 @@
-div#carousel {
-  perspective: 2000px;
-  /* background: #100000;  */
-  margin-top: 5%;
-  font-size: 0;
-  margin-bottom: 3rem;
-  height: 550px;
-  /* overflow: hidden;  */
-}
-
-figure#spinner {
-  transform-style: preserve-3d;
-  /* height: 300px;  */
-  transform-origin: 50% 50% -515px;
-  transition: 1s;
-}
-
-figure#spinner img {
-  width: 70%;
-  /*max-width: 650px;  max-height: 450px;*/
-  height: auto;
-  position: absolute;
-  margin: auto;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  transform-origin: 50% 50% -515px;
-  outline: 1px solid transparent;
-  cursor: pointer;
-}
-
-figure#spinner img:nth-child(1) {
-  transform: rotateY(0deg);
-}
-
-figure#spinner img:nth-child(2) {
-  transform: rotateY(-72deg);
-}
-
-figure#spinner img:nth-child(3) {
-  transform: rotateY(-144deg);
-}
-
-figure#spinner img:nth-child(4) {
-  transform: rotateY(-216deg);
-}
-
-figure#spinner img:nth-child(5) {
-  transform: rotateY(-288deg);
-}
-
-/* figure#spinner img:nth-child(6){ transform: rotateY(-288deg); } */
-
-/* figure#spinner img:nth-child(7){ transform: rotateY(-270deg); }
-  figure#spinner img:nth-child(8){ transform: rotateY(-315deg); } */
-
-div#carousel~span {
+  /* .left .carousel-control span .ss-icon{
   color: #0adec0;
   margin: -0.7em;
   display: inline-block;
@@ -68,31 +10,19 @@ div#carousel~span {
   border-bottom: none;
   line-height: 0;
 }
+ */
 
-div#carousel~span:hover {
-  color: #888;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-
-  div#carousel {
-    height:290px;
-  }
-  figure#spinner { 
-    transform-origin: 50% 50% -284px; 
-}
-figure#spinner img { 
-  transform-origin: 50% 50% -284px; 
-} 
-div#carousel~span {
+ #back {
+  color: #0adec0;
+   display:flex;
+   align-items:center;
+   justify-content:left;
   
-  margin: -0.9em;
+ }
+ #forw {
+  color: #0adec0;
+   display:flex;
+   align-items:center;
+   justify-content:right;
   
-  font-size: 3rem;
-  
-  position: relative;
-  margin-top: -18rem;
- 
-}
-}
+ }

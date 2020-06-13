@@ -16,8 +16,7 @@
 		</div>
 	</nav>
 
-	<header id="gtco-header" class="gtco-cover-search"
-		style="background-image: url(assets/images/travel2.jpg); ">
+	<header id="gtco-header" class="gtco-cover-search" style="background-image: url(assets/images/travel2.jpg); ">
 		<video autoplay muted loop id="myVideo" muted="muted">
 			<source src="assets/images/sea.mp4" type="video/mp4">
 		</video>
@@ -40,19 +39,21 @@
 							placeholder="France, Colombia, Egypt...">
 					</div>
 
-					<button type="submit" (click)="getCountryByName();scrollToCountries();searchForm.reset()" class="btn btn-primary">Pick a
+					<button type="submit" (click)="getCountryByName();scrollToCountries();searchForm.reset()"
+						class="btn btn-primary">Pick a
 						country
 						!</button>
 
 				</form>
 			</div>
 			<div class="row" style="padding-top:0px;">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box"
+					data-animate-effect="fadeInUp">
 					<h1>Learn about it !</h1>
 					<div class="arrow">
 						<span></span>
 						<span></span>
-						
+
 					</div>
 				</div>
 			</div>
@@ -65,6 +66,7 @@
 
 	<div class="gtco-section" style="padding:1em;">
 		<div class="gtco-container">
+			
 
 			<div class="row" id="regions">
 				<app-region-preview></app-region-preview>
@@ -72,11 +74,12 @@
 			<div *ngIf="error != null">
 				<app-error-country message='{{error}}'></app-error-country>
 			</div>
+	
 			<div id="countries" class="row" [ngStyle]="getCountriesStyle()">
 				<div *ngFor="let country of resultList" class="col-lg-3 col-md-3 col-sm-6">
 					<a style="max-height:350px" class="fh5co-card-item image-popup">
 						<figure style="max-height:150px">
-							<div  class="overlay"></div>
+							<div class="overlay"></div>
 							<img src="{{country.flag}}" alt="flag" class="img-responsive">
 						</figure>
 						<div style="min-height:200px" class="fh5co-text">
@@ -92,24 +95,29 @@
 	</div>
 
 
-<footer id="gtco-footer" role="contentinfo">
-	<div class="gtco-container">
-		<div class="row copyright">
-			<div class="col-md-12">
-				<p class="pull-left">
-					<small class="block">Countries Explorer &copy; {{year}} by <a href="http://irinadev.io/" target="_blank">Irina</a>. All Rights Reserved.</small>
-					<small class="block">Built with help form <a href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a> and <a href="https://codepen.io/" target="_blank">Codepen</a>
-						Pictures gratefully taken from <a href="http://unsplash.com/" target="_blank">Unsplash.</a></small>
-				</p>
-				
-				<ul class="gtco-social-icons pull-right">
-					<li><a href="https://github.com/irinael" target="_blank"><i class="icon-github"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/irina-el/" target="_blank"><i class="icon-linkedin"></i></a></li>
-					<li><a href="http://irinadev.io/" target="_blank"><i class="icon-code"></i></a></li>
-				</ul>
-				
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">Countries Explorer &copy; {{year}} by <a href="http://irinadev.io/"
+								target="_blank">Irina</a>. All Rights Reserved.</small>
+						<small class="block">Built with help form <a href="https://freehtml5.co/"
+								target="_blank">FreeHTML5.co</a> and <a href="https://codepen.io/"
+								target="_blank">Codepen</a>
+							Pictures gratefully taken from <a href="http://unsplash.com/"
+								target="_blank">Unsplash.</a></small>
+					</p>
+
+					<ul class="gtco-social-icons pull-right">
+						<li><a href="https://github.com/irinael" target="_blank"><i class="icon-github"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/irina-el/" target="_blank"><i
+									class="icon-linkedin"></i></a></li>
+						<li><a href="http://irinadev.io/" target="_blank"><i class="icon-code"></i></a></li>
+					</ul>
+
+				</div>
 			</div>
 		</div>
-	</div>	
-</footer>
+	</footer>
 </div>
