@@ -6,7 +6,7 @@
   <div style="min-height:200px" class="fh5co-text">
     <h2>{{country.name}}, {{country.region}}</h2>
     <p>Capital : {{country.capital}}</p>
-    <button class="btn btn-primary" (click)="openDialog()">Learn
+    <button class="btn btn-primary" routerLink="details/{{country.name}}">Learn
       more</button>
   </div>
 </a>

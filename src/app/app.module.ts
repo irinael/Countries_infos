@@ -15,6 +15,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpErrorInterceptor } from './errors-handling/http-error-interceptor';
 import { ErrorCountryComponent } from './error-country/error-country.component';
 import { CountryCardComponent } from './country-card/country-card.component';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CountryCardComponent } from './country-card/country-card.component';
     ErrorCountryComponent,
     RegionPreviewComponent,
     CountryCardComponent,
+    CountryDetailsComponent,
   ],
   imports: [
     BrowserModule,

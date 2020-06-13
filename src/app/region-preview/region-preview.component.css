@@ -12,17 +12,36 @@
 }
  */
 
- #back {
-  color: #0adec0;
-   display:flex;
-   align-items:center;
-   justify-content:left;
+  #back {
+    color: #0adec0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #forw {
+    color: #0adec0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
- }
- #forw {
-  color: #0adec0;
-   display:flex;
-   align-items:center;
-   justify-content:right;
-  
- }
+
+  .arrow {
+    /* position: absolute;
+  /* top: 50%; 
+  left: 50%;
+  margin-bottom:6em; */
+    margin: 5% 50% 10% 50%;
+  }
+
+  .arrow span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #0adec0;
+    border-right: 5px solid #0adec0;
+    transform: rotate(45deg);
+    margin: -10px;
+    /* animation: animate 2s infinite; */
+  }

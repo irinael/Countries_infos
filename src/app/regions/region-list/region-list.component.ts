@@ -77,7 +77,6 @@ export class RegionListComponent implements OnInit {
     this.region = this.route.snapshot.paramMap.get('region');
     this.getCountriesByRegion();
     this.getRegionsMap();
-    console.log(this.regionImg);
   }
 
 }

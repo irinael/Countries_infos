@@ -1,0 +1,111 @@
+<div id="page">
+  <nav class="gtco-nav" role="navigation">
+    <div class="gtco-container">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <div id="gtco-logo"><a href="index.html">Countries Explorer<em>.</em></a></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header id="gtco-header" style="background-image:url(assets/images/map.jpg)" class="gtco-cover">
+    <div class="overlay"></div>
+    <div class="gtco-container">
+      <div style="margin-top:100px" class="row">
+        <div class="col-md-7 col-md-offset-0 text-left">
+          <h1>{{country.name}} / <span style="font-style: italic;">{{country.nativeName}}</span>
+          </h1>
+          <!-- <br>
+          <h2 class="alts"><strong>Also known</strong> as <span *ngFor="let spell of country.altSpellings;let isLast=last">
+              {{spell}}{{isLast ? '' : ', '}}
+            </span></h2>
+          <h2 class="alts"><strong>Some people call it</strong> {{country.translations.de}},
+            {{country.translations.es}}, {{country.translations.fr}}, {{country.translations.it}},
+            {{country.translations.ja}}, {{country.translations.pt}}</h2> -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="gtco-section" style="padding:2em;">
+    <div class="gtco-container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 style="color:#09C6AB;text-align:center;font-size:3em">What about it ?</h1>
+          <br>
+          <h3 class="alts">You might also have heard about it mentionned as <span class="highlight"
+              *ngFor="let spell of country.altSpellings;let isLast=last">
+              {{spell}}{{isLast ? '.' : ', '}}
+            </span></h3>
+          <h3 class="alts">And <span class="highlight">some people call it</span> {{country.translations.de}},
+            {{country.translations.es}}, {{country.translations.fr}}, {{country.translations.it}},
+            {{country.translations.ja}}, {{country.translations.pt}}.</h3>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color:#09C6AB;text-align:center;font-size:3em">Some basics</h1>
+            <br>
+            <h3>If you go there, you might start with <span class="highlight">{{country.capital}}, the capital.</span>
+            </h3>
+            <h3>And before you go, you should learn a couple of words of <span
+                *ngFor="let lang of country.languages; let isLast=last">
+                <span class="highlight">{{lang.name}}</span>{{isLast ? '.' : ', or '}}
+              </span></h3>
+            <h3>Once you are there, you might need some <span class="highlight"
+                *ngFor="let cur of country.currencies;">{{cur.name}} ({{cur.symbol}}, {{cur.code}}),</span> to pay for
+              your staff.</h3>
+            <h3>If you plan to call somebody there, you should start dialing with <span class="highlight"
+                *ngFor="let code of country.callingCodes;let isLast=last">
+                +{{code}}</span>. If you would rather visit some websites, chances are they will be finishing with <span
+                class="highlight">{{country.topLevelDomain}}</span> .
+            </h3>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color:#09C6AB;text-align:center;font-size:3em">About people</h1>
+            <br>
+            <h3>People you are going to meet there are <span class="highlight">{{country.demonym}}</span>. There are
+              <span class="highlight">{{country.population}}</span> of them !</h3>
+            <h3 *ngIf="country.gini != null">The <a style="color:black;text-decoration: underline;"
+                href="https://en.wikipedia.org/wiki/Gini_coefficient" target="_blank">Gini coefficient</a> in this
+              country is <span class="highlight">{{country.gini}}</span></h3>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color:#09C6AB;text-align:center;font-size:3em">About geography</h1>
+            <br>
+            <h3>You can find this country in <span class="highlight">{{country.region}}</span>, and more specifically in
+              <span class="highlight">{{country.subregion}}</span>.</h3>
+            <h3 *ngIf="country.regionalBlocs.length>0">It is also part of <span
+                *ngFor="let bloc of country.regionalBlocs"><span class="highlight">{{bloc.name}}
+                  ({{bloc.acronym}})</span>.</span></h3>
+            <h3 *ngIf="borderCountries.length>0">Its neighbours are <span
+                *ngFor="let border of borderCountries;let isLast=last"><span
+                  class="highlight">{{border.name}}</span>{{isLast ? '.' : ', '}}</span>
+            </h3>
+            <h3>This country takes the whole area of <span class="highlight">{{country.area}}</span> km².</h3>
+            <h3>To be veeery specific, this country GPS position is <span class="highlight">{{country.latlng}}</span>.
+            </h3>
+            <h3>To never be late, you should now that the time zones there are <span
+                *ngFor="let tz of tzArray;let isLast=last">
+                <span class="highlight">{{tz}}</span>{{isLast ? '.' : ', '}}</span></h3>
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color:#09C6AB;text-align:center;font-size:3em">About codes</h1>
+            <br>
+            <h3>Tha alphabetic codes of this country are <span class="highlight">{{country.alpha2Code}}</span> or <span class="highlight">{{country.alpha3Code}}</span>, the numeric
+              code is <span class="highlight">{{country.numericCode}}</span>, and the cioc code is <span class="highlight">{{country.cioc}}</span>.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -51,6 +51,7 @@ export class DetailsCountryComponent implements OnInit, AfterViewInit {
     this.getBorderCountries();
     this.putTimeZoneObjectInList();
   }
+
   ngOnInit() {
     this.country = this.data.country;
     this.currencies = this.data.country.currencies;
