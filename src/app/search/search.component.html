@@ -72,7 +72,7 @@
 			<div *ngIf="error != null">
 				<app-error-country message='{{error}}'></app-error-country>
 			</div>
-			<div *ngIf="resultList != null" id="countries" class="row" [ngStyle]="getCountriesStyle()">
+			<div id="countries" class="row" [ngStyle]="getCountriesStyle()">
 				<div *ngFor="let country of resultList" class="col-lg-3 col-md-3 col-sm-6">
 					<a style="max-height:350px" class="fh5co-card-item image-popup">
 						<figure style="max-height:150px">
