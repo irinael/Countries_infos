@@ -1,46 +1,87 @@
-<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-  <div class="form-wrap">
-    <div class="tab">
-      <div class="tab-content">
-        <div class="tab-content-inner active" data-content="signup">
-          <div class="flex">
-          <div><h2>{{this.country.name}}</h2></div>
-          <div><img class="little-flag" src="{{this.country.flag}}" alt="fag"/></div>
-        </div>
+<mat-dialog-content>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <img class="profile-img" src="{{country.flag}}" alt="200x250" width=100%>
         <div class="row">
-            <div class="col-md-12">
-                <div class="flex">
-                  <label>Region : </label>
-                  <div>{{this.country.region}}</div>
-                </div>
+          <div class="col-md-12">
+            <h4>BR : {{country.translations.br}}</h4>
+            <h4>DE : {{country.translations.de}}</h4>
+            <h4>ES : {{country.translations.es}}</h4>
+            <h4>FR : {{country.translations.fr}}</h4>
+            <h4>IT : {{country.translations.it}}</h4>
+            <h4>JA : {{country.translations.ja}}</h4>
+            <h4>PT : {{country.translations.pt}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div id="resume" class="content">
+          <div class="about-me">
+            <h2>{{country.name}} / <span style="font-style: italic;">{{country.nativeName}}</span></h2>
+            <h3>Capital : {{country.capital}}</h3>
+
+            <div id="information" class="d-flex justify-content-between mt-4">
+              <table class="table table-hover">
+                <tbody>
+
+                  <tr>
+                    <th>Currency</th>
+                    <td>
+                      <div style="white-space: pre-line" *ngFor="let cur of currencies">{{cur.name}} / {{cur.symbol}} /
+                        {{cur.code}}</div>
+                    </td>
+                  <tr>
+                    <th>Region</th>
+                    <td>{{country.region}}</td>
+                  <tr>
+                    <th>Subregion</th>
+                    <td>{{country.subregion}}</td>
+                  <tr>
+                    <th>Population</th>
+                    <td>{{country.population}}</td>
+                  <tr>
+                    <th>Calling Codes</th>
+                    <td>+{{country.callingCodes}}</td>
+                  <tr>
+                    <th>Time Zones</th>
+                    <td>{{country.timezones}}</td>
+                  <tr>
+                    <th>Borders</th>
+                    <td>
+                      <div style="white-space: pre-line" *ngFor="let border of getBorderCountriesNames()">{{border}}</div>
+                    </td>
+                  <tr *ngIf="altSpellings.length > 0">
+                    <th>Alternative Spellings</th>
+                    <td>
+                      <div style="white-space: pre-line" *ngFor="let spell of altSpellings">{{spell}}</div>
+                    </td>
+                  <tr>
+                    <th>Area</th>
+                    <td>{{country.area}}</td>
+                  <tr>
+                    <th><a href="https://en.wikipedia.org/wiki/Gini_coefficient" target="_blank">Gini Coefficient</a>
+                    </th>
+                    <td>{{country.gini}}</td>
+                  <tr>
+                    <th>Regional Blocs</th>
+                    <td>
+                      <div style="white-space: pre-line" *ngFor="let bloc of regionalBlocs">{{bloc.name}} -
+                        {{bloc.acronym}}</div>
+                    </td>
+                  <tr>
+                    <th>Population</th>
+                    <td>{{country.population}}</td>
+                  <tr>
+                    <th>Population</th>
+                    <td>{{country.population}}</td>
+                </tbody>
+              </table>
+
             </div>
           </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="flex">
-                    <label>Subregion : </label>
-                    <div>{{this.country.subregion}}</div>
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="flex">
-                    <label>Capitale : </label>
-                    <div>{{this.country.capital}}</div>
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="flex">
-                <label>Population</label>
-                <p>{{this.country.population}}</p>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</mat-dialog-content>

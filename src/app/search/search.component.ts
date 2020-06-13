@@ -1,6 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CountriesServicesService } from '../services/countries-services.service';
 import { Country } from '../interfaces/country';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsCountryComponent } from '../details-country/details-country.component';
+import { throwError } from 'rxjs';
+import { ErrorCountryService } from '../services/errors-services/error-country-service.service';
+import { CountriesServicesService } from '../services/countries-services/countries-services.service';
+
 
 
 
@@ -13,32 +18,83 @@ import { Country } from '../interfaces/country';
 export class SearchComponent implements OnInit {
 
   constructor(
-    private service: CountriesServicesService) { }
+    private serviceError: ErrorCountryService,
+    private service: CountriesServicesService,
+    public dialog: MatDialog) { }
 
-  @Input()nameInput: string;
- resultList: Country[] = [];
- name: string = '';
- error: any = null;
+  @Input() nameInput: string;
+  resultList: Country[] = [];
+  name: '';
+  selectedCountry: Country;
+  error: any ;
+  video: any;
 
   getCountryByName(): void {
-    this.service.getCountryByName(this.nameInput).subscribe(
-      data => {
-      while (this.resultList.length > 0) {
-        this.resultList.pop();
+    this.error = null;
+    while (this.resultList.length > 0) {
+      this.resultList.pop();
+    }
+
+    if (this.nameInput === null || this.nameInput === '') {
+      this.service.getAll().subscribe(
+        data => {
+          data.forEach(country => {
+            this.resultList.push(country);
+          });
+        });
+    } else {
+      this.service.getCountryByName(this.nameInput).subscribe(
+        (data) => {
+          data.forEach(country => {
+            this.resultList.push(country);
+          });
+        },
+        (error) => {
+          this.error = 'This country does not exist ! (yet)';
+        }
+      );
+    }
+  }
+
+
+  // saveCountry(country: Country): void {
+  //   localStorage.setItem('country', JSON.stringify(country));
+  //   console.log(localStorage.getItem('country'));
+  // }
+  videoOnOff(): void {
+    if (this.video.paused) {
+      this.video.play();
+      document.getElementById('myBtn').innerHTML = 'Stop moving, it\'s annoying !';
+    } else {
+      this.video.pause();
+      document.getElementById('myBtn').innerHTML = 'Go !';
+    }
+  }
+
+  scrollToCountries() {
+    document.getElementById('regions').scrollIntoView();
+  }
+
+  setSelectedCountry(country: Country) {
+    this.selectedCountry = country;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DetailsCountryComponent, {
+      data: {
+        country: this.selectedCountry,
       }
-      console.log(data);
-      data.forEach(country => {
-        this.resultList.push(country);
-      });
+    });
+
+    dialogRef.afterClosed().subscribe
+      (res => {
+        console.log('dialog res: ${res}');
       });
   }
-
-  saveCountry(country: Country): void {
-  localStorage.setItem('country', JSON.stringify(country));
-  console.log(localStorage.getItem('country'));
-  }
-
   ngOnInit() {
+    this.video = document.getElementById('myVideo') as HTMLVideoElement;
+    this.videoOnOff();
+
   }
 
 }
