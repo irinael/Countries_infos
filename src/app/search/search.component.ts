@@ -56,11 +56,6 @@ export class SearchComponent implements OnInit {
     }
   }
 
-
-  // saveCountry(country: Country): void {
-  //   localStorage.setItem('country', JSON.stringify(country));
-  //   console.log(localStorage.getItem('country'));
-  // }
   videoOnOff(): void {
     if (this.video.paused) {
       this.video.play();

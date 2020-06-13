@@ -14,6 +14,19 @@
   padding: 20px; */
     
 }
+#finder input{
+  font-size:1em; color:white;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  height:50px;
+  font-weight: bold;
+}
+#finder button {
+  font-size:1em;
+  height:50px;
+  padding-top:10px;
+  margin-left: 20px;;  
+  font-weight: bold;
+}
 #myVideo {
     position: absolute;
     right: 0;
