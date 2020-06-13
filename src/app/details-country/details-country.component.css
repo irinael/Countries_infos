@@ -18,15 +18,19 @@
     background-color: white;
     margin-top: 30px;
     
+    
   }
-  .content {
-    padding: 20px 20px;
-  }
-  .about-me h2{
+  /* .content {
+    padding: 10px 10px;
+  } */
+  .about h2{
     font-weight: bold;
+    margin-left:18px;
+    
   }
-  .about-me h5{
-    font-weight: 200;
+  .about h3{
+    margin-left:18px;
+    
   }
   
   .d-flex{
@@ -118,6 +122,7 @@
     }
     #information table th{
       width: 30%;
+      
     }
     #portfolio .imgs{
       flex-wrap: wrap;
@@ -138,6 +143,10 @@
   #information table th{
     border: 1px solid #e6e6e6 !important;
     text-align: center;
+  }
+
+  .table-title {
+    background-color: #e6e6e6 ;
   }
   #resume .divider-name:before{
     content: "";

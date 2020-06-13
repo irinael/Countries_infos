@@ -31,7 +31,8 @@ import { ErrorCountryComponent } from './error-country/error-country.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
   ],
   entryComponents: [
     DetailsCountryComponent

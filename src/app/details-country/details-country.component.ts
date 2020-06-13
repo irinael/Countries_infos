@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, DoCheck, OnChanges, AfterViewInit } from '@angular/core';
 import { Country } from '../interfaces/country';
 import { ActivatedRoute } from '@angular/router';
 import { CountriesServicesService } from '../services/countries-services/countries-services.service';
@@ -12,21 +12,13 @@ export interface Tile {
   rows: number;
   text: string;
 }
-export class GridListDynamicExample {
-  tiles: Tile[] = [
-    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
-  ];
-}
 @Component({
   selector: 'app-details-country',
   templateUrl: './details-country.component.html',
   styleUrls: ['./details-country.component.css']
 })
 
-export class DetailsCountryComponent implements OnInit {
+export class DetailsCountryComponent implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute, private service: CountriesServicesService, @Inject(MAT_DIALOG_DATA) public data: any) {
   }
@@ -42,29 +34,41 @@ export class DetailsCountryComponent implements OnInit {
   regionalBlocs: any[];
   currencies: any[];
   languages: any[];
+  borderCountries: any[] = [];
+  population: string;
+  tz: string;
+  tzArray: string[];
+  //for better display
+  putTimeZoneObjectInList(): void {
+    this.tz = this.timezones.toString();
+    this.tzArray = this.tz.split(',');
+  }
 
-  borders: any[];
 
-  // getBorderCountriesNames(): Observable<Array<Country>> {
-    
-  //   this.bordersAlphas.forEach(entry =>
-  //   this.borders.push(this.service.getCountryByAlphaCode(entry.alpha3Code)));
-  //   return this.borders;
-    
-  // }
+  getBorderCountries(): void {
+    console.log('tu m appelles ?');
+    this.bordersAlphas.forEach(elem => {
+      this.service.getCountryByAlphaCode(elem).subscribe(country => {
+        this.borderCountries.push(country);
+      });
+    });
+  }
+  ngAfterViewInit() {
+    this.getBorderCountries();
+    this.putTimeZoneObjectInList();
+  }
   ngOnInit() {
     this.country = this.data.country;
     this.currencies = this.data.country.currencies;
     this.topLevelDomain = this.data.country.topLevelDomain;
     this.callingCodes = this.data.country.callingCodes;
     this.altSpellings = this.data.country.altSpellings;
-    this.latlng = this.data.country.timezones;
+    this.latlng = this.data.country.latlng;
     this.timezones = this.data.country.timezones;
     this.bordersAlphas = this.data.country.borders;
     this.numericCode = this.data.country.numericCode;
     this.translations = this.data.country.translations;
     this.regionalBlocs = this.data.country.regionalBlocs;
     this.languages = this.data.country.languages;
-    
   }
 }
