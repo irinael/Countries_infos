@@ -1,4 +1,8 @@
-#finder
+
+#curious {
+  margin-top: 100px;
+}
+  #finder
 {
     display:flex;
     justify-content: center;
@@ -16,13 +20,18 @@
   margin-left: 20px;;  
   font-weight: bold;
 }
+#header {
+  background-image: none;
+}
 @media screen and (max-width: 768px) {
+  
   #finder {
-    /* margin-top:10px; */
+    margin-top:0px;
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    
   }
   #finder button {
     max-width:120px;
@@ -31,7 +40,15 @@
 
   }
   #curious {
-    margin-top:30px;
+    margin-top:70px;
+  }
+
+  header video {
+    visibility: hidden;
+  }
+
+  #myBtn {
+    visibility: hidden;
   }
 }
 
