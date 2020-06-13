@@ -449,6 +449,16 @@ h1, h2, h3, h4, h5, h6, figure {
   .gtco-cover-search {
   height: 500px;
   }
+
+  .header img .overlay{
+    z-index: 1;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  }
 }
 .gtco-cover-reg {
   height: 1300px;
