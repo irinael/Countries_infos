@@ -10,21 +10,11 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class CountryCardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
   @Input()
   country: Country = {};
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DetailsCountryComponent, {
-      data: {
-        country: this.country,
-      }
-    });
-    dialogRef.afterClosed().subscribe
-      (res => {
-      });
-  }
   ngOnInit() {
 
   }

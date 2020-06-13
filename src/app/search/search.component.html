@@ -1,21 +1,13 @@
-<!-- <div class="gtco-loader"></div> -->
-
 <div id="page">
-
-
-	<!-- <div class="page-inner"> -->
 	<nav class="gtco-nav" role="navigation">
 		<div class="gtco-container">
-
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
 					<div id="gtco-logo"><a href="">Countries Explorer <em>.</em></a></div>
 				</div>
 			</div>
-
 		</div>
 	</nav>
-
 	<header id="gtco-header" class="gtco-cover-search" style="background-image: url(assets/images/travel2.jpg); ">
 		<video autoplay muted loop id="myVideo" muted="muted">
 			<source src="assets/images/sea.mp4" type="video/mp4">
@@ -46,14 +38,13 @@
 
 				</form>
 			</div>
-			<div class="row" style="padding-top:0px;">
+			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box"
 					data-animate-effect="fadeInUp">
 					<h1>Learn about it !</h1>
 					<div class="arrow">
 						<span></span>
 						<span></span>
-
 					</div>
 				</div>
 			</div>
@@ -72,8 +63,19 @@
 			<div *ngIf="error != null">
 				<app-error-country message='{{error}}'></app-error-country>
 			</div>
-	
+			<div class="row">
+				<div style="margin-bottom:5em;" class="container">
+					<h1 style="color:#09C6AB;text-align:center;font-size:3em;margin-bottom:1em">Or learn about a country !</h1>
+					<div class="arrow2">
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+
 			<div id="countries" class="row" [ngStyle]="getCountriesStyle()">
+
 				<div *ngFor="let country of resultList" class="col-lg-3 col-md-3 col-sm-6">
 					<app-country-card [country]='country'></app-country-card>
 				</div>
