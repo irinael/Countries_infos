@@ -40,7 +40,7 @@
 							placeholder="France, Colombia, Egypt...">
 					</div>
 
-					<button type="submit" (click)="getCountryByName();searchForm.reset()" class="btn btn-primary">Pick a
+					<button type="submit" (click)="getCountryByName();scrollToCountries();searchForm.reset()" class="btn btn-primary">Pick a
 						country
 						!</button>
 
@@ -55,13 +55,13 @@
 
 	<div class="gtco-section" style="padding:1em;">
 		<div class="gtco-container">
-			<div *ngIf="resultList.length==0 && error == null" class="row" style="padding-top:0px;">
+			<div class="row" style="padding-top:0px;">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Learn about it !</h2>
-					<div class="arrow" (click)="scrollToCountries()">
+					<div class="arrow">
 						<span></span>
 						<span></span>
-						<span></span>
+						
 					</div>
 				</div>
 			</div>
@@ -72,14 +72,14 @@
 			<div *ngIf="error != null">
 				<app-error-country message='{{error}}'></app-error-country>
 			</div>
-			<div *ngIf="resultList != null" id="countries" class="row">
-				<div *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
-					<a class="fh5co-card-item image-popup">
-						<figure>
-							<div class="overlay"></div>
+			<div *ngIf="resultList != null" id="countries" class="row" [ngStyle]="getCountriesStyle()">
+				<div *ngFor="let country of resultList" class="col-lg-3 col-md-3 col-sm-6">
+					<a style="max-height:350px" class="fh5co-card-item image-popup">
+						<figure style="max-height:150px">
+							<div  class="overlay"></div>
 							<img src="{{country.flag}}" alt="flag" class="img-responsive">
 						</figure>
-						<div class="fh5co-text">
+						<div style="min-height:200px" class="fh5co-text">
 							<h2>{{country.name}}, {{country.region}}</h2>
 							<p>Capital : {{country.capital}}</p>
 							<button class="btn btn-primary" (click)="setSelectedCountry(country);openDialog()">Learn
@@ -90,4 +90,26 @@
 			</div>
 		</div>
 	</div>
+
+
+<footer id="gtco-footer" role="contentinfo">
+	<div class="gtco-container">
+		<div class="row copyright">
+			<div class="col-md-12">
+				<p class="pull-left">
+					<small class="block">Countries Explorer &copy; {{year}} by <a href="http://irinadev.io/" target="_blank">Irina</a>. All Rights Reserved.</small>
+					<small class="block">Built with help form <a href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a> and <a href="https://codepen.io/" target="_blank">Codepen</a>
+						Pictures gratefully taken from <a href="http://unsplash.com/" target="_blank">Unsplash.</a></small>
+				</p>
+				
+				<ul class="gtco-social-icons pull-right">
+					<li><a href="https://github.com/irinael" target="_blank"><i class="icon-github"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/irina-el/" target="_blank"><i class="icon-linkedin"></i></a></li>
+					<li><a href="http://irinadev.io/" target="_blank"><i class="icon-code"></i></a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>	
+</footer>
 </div>
