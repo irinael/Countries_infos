@@ -1,18 +1,7 @@
-
-
 #finder
 {
     display:flex;
     justify-content: center;
-    
-    
-    /*position: relative;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 120%;
-  padding: 20px; */
-    
 }
 #finder input{
   font-size:1em; color:white;
@@ -27,6 +16,25 @@
   margin-left: 20px;;  
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  #finder {
+    /* margin-top:10px; */
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #finder button {
+    max-width:120px;
+    padding-left:5px;
+    padding-right:5px;
+
+  }
+  #curious {
+    margin-top:30px;
+  }
+}
+
 #myVideo {
     position: absolute;
     right: 0;
