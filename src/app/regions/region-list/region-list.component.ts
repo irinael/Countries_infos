@@ -48,6 +48,11 @@ export class RegionListComponent implements OnInit {
       }
     });
   }
+  getCountriesStyle() {
+    if (this.countriesByLetter.length <= 3) {
+      return { 'display': 'flex', 'justify-content': 'center' };
+    }
+  }
 
   getCountriesByLetter(letter: string) {
     this.error = null;

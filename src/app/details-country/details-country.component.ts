@@ -6,12 +6,6 @@ import { Observable } from 'rxjs';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BROWSER_MODULE_PROVIDERS } from '@angular/platform-browser/src/browser';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 @Component({
   selector: 'app-details-country',
   templateUrl: './details-country.component.html',
@@ -67,7 +61,6 @@ export class DetailsCountryComponent implements OnInit, AfterViewInit {
     this.timezones = this.data.country.timezones;
     this.bordersAlphas = this.data.country.borders;
     this.numericCode = this.data.country.numericCode;
-    // this.translations = this.data.country.translations;
     this.regionalBlocs = this.data.country.regionalBlocs;
     this.languages = this.data.country.languages;
   }
