@@ -23,6 +23,7 @@ import { ErrorCountryComponent } from './error-country/error-country.component';
     RegionListComponent,
     RegionPreviewComponent,
     ErrorCountryComponent,
+    RegionPreviewComponent
   ],
   imports: [
     BrowserModule,

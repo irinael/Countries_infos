@@ -1,8 +1,83 @@
-<p>
+<!-- <p>
   Which of the {{nbCountries}} countries in {{region}} interests you ?
 </p>
-<p routerLink="../../">retour</p>
+
 
 <div *ngFor="let country of countries">
-  <p routerLink="../../details/{{country.name}}"> {{country.name}} </p>
-</div>
+  <p> {{country.name}} </p>
+</div> -->
+
+ <div style="background-color:black;" id="page">
+  <nav class="gtco-nav" role="navigation">
+    <div class="gtco-container">
+
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <div id="gtco-logo"><a href="index.html">Countries Explorer<em>.</em></a></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="gtco-header" class="gtco-cover-reg" role="banner"
+    style="background-image: url(../../assets/images/africa.jpg)">
+    <div class="overlay" style="height:1300px"></div>
+    <div class="gtco-container">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-0 text-left">
+
+
+          <div class="row">
+            <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+              <h1>Which of the {{nbCountries}} countries in {{region}} interests you ?</h1>
+            </div>
+            <div class="col-md-4">
+              <div class="ContactList" *ngFor="let country of countriesByLetter">
+                <section class="Contact">
+                  <img class="Contact-avatar" src="{{country.flag}}" />
+                  <h5 class="Contact-name">{{country.name}}</h5>
+                </section>
+              </div>
+            </div>
+            <div style="margin-top:20%" class="col-md-4">
+              <h4 style="font-weight: bold" class="Contact-name">{{error}}</h4>
+            </div>
+            <div class="animate-box">
+              <div class="alpha">
+                <span (click)="getCountriesByLetter('A')">A</span>
+                <span (click)="getCountriesByLetter('B')">B</span>
+                <span (click)="getCountriesByLetter('C')">C</span>
+                <span (click)="getCountriesByLetter('D')">D</span>
+                <span (click)="getCountriesByLetter('E')">E</span>
+                <span (click)="getCountriesByLetter('F')">F</span>
+                <span (click)="getCountriesByLetter('G')">G</span>
+                <span (click)="getCountriesByLetter('H')">H</span>
+                <span (click)="getCountriesByLetter('I')">I</span>
+                <span (click)="getCountriesByLetter('J')">J</span>
+                <span (click)="getCountriesByLetter('K')">K</span>
+                <span (click)="getCountriesByLetter('L')">L</span>
+                <span (click)="getCountriesByLetter('M')">M</span>
+                <span (click)="getCountriesByLetter('N')">N</span>
+                <span (click)="getCountriesByLetter('O')">O</span>
+                <span (click)="getCountriesByLetter('P')">P</span>
+                <span (click)="getCountriesByLetter('Q')">Q</span>
+                <span (click)="getCountriesByLetter('R')">R</span>
+                <span (click)="getCountriesByLetter('S')">S</span>
+                <span (click)="getCountriesByLetter('T')">T</span>
+                <span (click)="getCountriesByLetter('U')">U</span>
+                <span (click)="getCountriesByLetter('V')">V</span>
+                <span (click)="getCountriesByLetter('W')">W</span>
+                <span (click)="getCountriesByLetter('X')">X</span>
+                <span (click)="getCountriesByLetter('Y')">Y</span>
+                <span (click)="getCountriesByLetter('Z')">Z</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 

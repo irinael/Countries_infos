@@ -35,14 +35,16 @@
 
 			<div class="row">
 				<form #searchForm="ngForm" id="finder">
-				<div class="form-group">
-					<input name="search" class="form-control" [(ngModel)]="nameInput" placeholder="France, Colombia, Egypt...">
-				</div>
-				
-					<button type="submit" (click)="getCountryByName();searchForm.reset()" class="btn btn-primary">Pick a country
-							!</button>
-				
-			</form>
+					<div class="form-group">
+						<input name="search" class="form-control" [(ngModel)]="nameInput"
+							placeholder="France, Colombia, Egypt...">
+					</div>
+
+					<button type="submit" (click)="getCountryByName();searchForm.reset()" class="btn btn-primary">Pick a
+						country
+						!</button>
+
+				</form>
 			</div>
 
 		</div>
@@ -64,15 +66,9 @@
 				</div>
 			</div>
 
-			<!-- <div class="row" id="regions">
-	
-	<app-region-preview></app-region-preview>
-	 <div routerLink="region/Africa">Africa</div>
-	<div routerLink="region/Americas">Americas</div>
-	<div routerLink="region/Asia">Asia</div>
-	<div routerLink="region/Europe">Europe</div>
-	<div routerLink="region/Oceania">Oceania</div> 
-</div> -->
+			<div class="row" id="regions">
+				<app-region-preview></app-region-preview>
+			</div>
 			<div *ngIf="error != null">
 				<app-error-country message='{{error}}'></app-error-country>
 			</div>
