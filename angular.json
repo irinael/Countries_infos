@@ -1,0 +1,161 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "countries": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/countries",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+            "scripts": [ 
+              {"input": "src/assets/js/jquery.min.js","bundleName": "external-module8"},
+              { "input": "src/assets/js/jquery.easing.1.3.js","bundleName": "external-module5"},
+               { "input": "src/assets/js/jquery.countTo.js","bundleName": "external-module18"},
+               {"input": "src/assets/js/jquery.easypiechart.min.js","bundleName": "external-module6"},
+               {"input": "src/assets/js/jquery.magnific-popup.min.js","bundleName": "external-module7"},
+               {"input": "src/assets/js/jquery.stellar.min.js","bundleName": "external-module9"},
+               {"input": "src/assets/js/jquery.waypoints.min.js","bundleName": "external-module10"},
+
+               {"input": "src/assets/js/bootstrap.min.js","bundleName": "external-module16"},
+               {"input": "src/assets/js/bootstrap-datepicker.min.js", "bundleName": "external-module2"},
+               {"input": "src/assets/js/magnific-popup-options.js","bundleName": "external-module11"},
+               {"input": "src/assets/js/owl.carousel.min.js","bundleName": "external-module14"},
+               {"input": "src/assets/js/modernizr-2.6.2.min.js","bundleName": "external-module13"},
+               {"input": "src/assets/js/respond.min.js","bundleName": "external-module15"},
+               {"input": "src/assets/js/main.js","bundleName": "external-module12"}
+            ],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "countries:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "countries:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "countries:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "countries-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "countries:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "countries:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "countries"
+}

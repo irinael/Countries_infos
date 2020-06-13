@@ -1,0 +1,73 @@
+<div class="gtco-loader"></div>
+
+<div id="page">
+
+
+	<!-- <div class="page-inner"> -->
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="">Countries Explorer <em>.</em></a></div>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+		style="background-image: url(../assets/images/img_6.jpg); max-height: 20em; ">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-center">
+					<div class="row row-mt-5em">
+						<div class="col-md-12 mt-text animate-box" data-animate-effect="fadeInUp">
+							<h1>Curious about the world ? </h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="finder">
+				<div>
+					<input class="form-control" [(ngModel)]="nameInput" placeholder="France, Italy, Egypt...">
+				</div>
+				<div>
+					<p class="col-md-6"><span (click)="getCountryByName()" class="btn btn-primary">Pick a country
+							!</span></p>
+				</div>
+			</div>
+
+		</div>
+
+	</header>
+
+	<div class="gtco-section" style="padding:3em;">
+		<div class="gtco-container">
+			<div *ngIf="resultList.length==0" class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Learn about it !</h2>
+				</div>
+			</div>
+				
+
+				<div *ngIf="resultList != null" class="row">
+					<div *ngFor="let country of resultList" class="col-lg-4 col-md-4 col-sm-6">
+						<a routerLink="details/{{country.name}}" class="fh5co-card-item image-popup">
+							<figure>
+								<div class="overlay"></div>
+								<img src="{{country.flag}}" alt="flag" class="img-responsive">
+							</figure>
+							<div class="fh5co-text">
+								<h2>{{country.name}}, {{country.region}}</h2>
+								<p>Capital : {{country.capital}}</p>
+								<button (click)="saveCountry(country)" class="btn btn-primary" routerLink="details/{{country.name}}">Learn more</button>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
