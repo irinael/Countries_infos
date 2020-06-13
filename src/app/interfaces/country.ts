@@ -20,7 +20,7 @@ export interface Country {
     timezones?: any[];
     borders?: any[];
     numericCode?: any;
-    translations?: any[];
+    translations?: Map<any, any>[];
     regionalBlocs?: any[];
     currencies?: any[];
     languages?: any[];
