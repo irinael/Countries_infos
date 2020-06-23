@@ -1,22 +1,9 @@
-  /* .left .carousel-control span .ss-icon{
-  color: #0adec0;
-  margin: -0.7em;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 7rem;
-  transition: 0.6s color;
-  position: relative;
-  margin-top: -32rem;
-  border-bottom: none;
-  line-height: 0;
-}
- */
-
   #back {
     color: #0adec0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: none;
   }
 
   #forw {
@@ -24,14 +11,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: none;
   }
   
 
   .arrow {
-    /* position: absolute;
-  /* top: 50%; 
-  left: 50%;
-  margin-bottom:6em; */
     margin: 5% 50% 10% 50%;
   }
 
@@ -43,5 +27,13 @@
     border-right: 5px solid #0adec0;
     transform: rotate(45deg);
     margin: -10px;
-    /* animation: animate 2s infinite; */
+    
+  }
+.carousel-span {
+  font-size: 5em;
+}
+  @media screen and (max-width: 768px) {
+   .carousel-span {
+   font-size:1em;
+   }
   }
