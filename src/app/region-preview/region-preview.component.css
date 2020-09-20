@@ -1,22 +1,14 @@
-  #back {
-    color: #0adec0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: none;
+  .container {
+    margin-bottom:5em;
   }
-
-  #forw {
-    color: #0adec0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: none;
+  .container h1 {
+    color:#09C6AB;
+    text-align:center;
+    font-size:3em;
+    margin-top:1em;
   }
-  
-
   .arrow {
-    margin: 5% 50% 10% 50%;
+    margin: 2% 50% 5% 50%;
   }
 
   .arrow span {
@@ -29,11 +21,24 @@
     margin: -10px;
     
   }
-.carousel-span {
-  font-size: 5em;
-}
+
+  .sec {
+    margin-top:5%;
+  }
+
+  .region {
+    border-radius: 30px;
+    cursor:pointer;
+    max-width:100%;
+    height:auto;
+  }
+
   @media screen and (max-width: 768px) {
-   .carousel-span {
-   font-size:1em;
+   .col-md-4 {
+     margin-top:2%;
+    
+   }
+   .row sec {
+     margin-top:0%;
    }
   }
